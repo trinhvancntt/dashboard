@@ -1,0 +1,16 @@
+# Map files (source maps)
+*.map
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# vscode
+.vscode
+

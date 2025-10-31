@@ -1,0 +1,97 @@
+// ========================================
+// LAYOUT STYLES
+// ========================================
+// Note: Header and Footer are in separate files (_header.scss, _footer.scss)
+// This file contains page sections layout only
+
+// Main content
+
+// common
+.color-primary {
+  color: $color-primary;
+}
+
+// Common section header styles
+.section {
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-12 - .25;
+
+    @include respond-to(md) {
+      margin-bottom: $spacing-16;
+    }
+  }
+  
+  &__title {
+    @include heading-style($font-size-3xl + .125, $font-weight-bold, $color-gray);
+    text-align: center;
+    gap: $spacing-4;
+    margin: 0;
+    padding-bottom: $spacing-10;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 160.001px;
+      height: 33.465px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("../img/svg/icon-leaf.svg")
+    }
+
+    @include respond-to(md) {
+      font-size: $font-size-5xl;
+      padding-bottom: $spacing-16;
+
+      &:after {
+        width: 267.74px;
+        height: 56px;
+      }
+    }
+  }
+}
+
+// Common card grid styles
+.card {
+  &__grid {
+    @include grid-responsive(1, 2, 2);
+    gap: $spacing-6;
+  }
+  
+  &__item {
+    @include card;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  
+  &__number {
+    @extend .number-badge;
+    margin: 0 auto 0;
+    line-height: 130%;
+  }
+  
+  &__item-title {
+    @include heading-style($font-size-xl, $font-weight-blackbold);
+    margin-bottom: 0;
+    letter-spacing: -0.72px;
+
+    @include respond-to(md) {
+      font-size: $font-size-2xl;
+    }
+  }
+  
+  &__description {
+    @include text-style($font-size-base);
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-0;
+  }
+
+}

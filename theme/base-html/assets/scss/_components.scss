@@ -1,0 +1,269 @@
+// ========================================
+// COMPONENTS
+// ========================================
+
+// Container
+.container {
+  @include container;
+}
+
+// Buttons
+.btn {
+  @include button-base;
+  
+  &--primary {
+    @include button-primary;
+  }
+  
+  &--secondary {
+    @include button-secondary;
+  }
+  
+  &--large {
+    padding: $spacing-4 $spacing-8;
+    font-size: $font-size-lg;
+  }
+  
+  &--small {
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+  }
+}
+
+// Cards
+.card {
+  @include card;
+  
+  &__header {
+    margin-bottom: $spacing-4;
+  }
+  
+  &__title {
+    @include heading-style($font-size-xl, $font-weight-bold);
+    margin-bottom: $spacing-2;
+  }
+  
+  &__content {
+    @include text-style;
+  }
+  
+  &__footer {
+    margin-top: $spacing-4;
+    padding-top: $spacing-4;
+    border-top: 1px solid $color-gray-light;
+  }
+}
+
+// Icons
+.icon {
+  @include icon-size;
+  
+  &--sm {
+    @include icon-size(16px);
+  }
+  
+  &--md {
+    @include icon-size(24px);
+  }
+  
+  &--lg {
+    @include icon-size(32px);
+  }
+  
+  &--xl {
+    @include icon-size(48px);
+  }
+}
+
+// Leaf decoration
+.leaf-decoration {
+  display: inline-flex;
+  align-items: center;
+  color: $color-primary;
+  font-size: $font-size-lg;
+  margin: 0 $spacing-2;
+  
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+// Number badges
+.number-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: $color-secondary;
+  color: $color-white;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-4;
+  
+  @include respond-to(md) {
+    width: 80px;
+    height: 80px;
+    font-size: $font-size-2xl;
+  }
+}
+
+// Grid items
+.grid-item {
+  @include card;
+  text-align: center;
+  
+  &__icon {
+    @include icon-size(48px);
+    color: $color-primary;
+    margin: 0 auto $spacing-4;
+  }
+  
+  &__title {
+    @include heading-style($font-size-lg, $font-weight-semibold);
+    margin-bottom: $spacing-3;
+  }
+  
+  &__description {
+    @include text-style($font-size-sm);
+    margin-bottom: $spacing-4;
+  }
+}
+
+// Action items
+.action-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-4;
+  
+  @include respond-to(md) {
+    grid-template-columns: 1fr 1fr;
+    align-items: top;
+    gap: $spacing-8;
+  }
+  
+  &__image {
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%; // 16:9 aspect ratio
+    }
+  }
+  
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slow;
+  }
+  
+  &:hover &__img {
+    @include respond-to(md) {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__content {
+    padding: 0;
+    
+    @include respond-to(md) {
+      padding: $spacing-4 $spacing-4 $spacing-4 $spacing-0;
+    }
+  }
+  
+  &__title {
+    @include heading-style($font-size-xl, $font-weight-blackbold);
+    color: $color-primary;
+
+    @include respond-to(md) {
+      font-size: $font-size-2xl;
+    }
+  }
+  
+  &__description {
+    @include text-style($font-size-base);
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-4;
+  }
+  
+  &__sdgs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-3;
+  }
+}
+
+// Section headers
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-16;
+  
+  &__title {
+    @include heading-style($font-size-4xl, $font-weight-bold, $color-primary);
+    margin-bottom: $spacing-4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: $spacing-4;
+  }
+  
+  &__description {
+    @include text-style($font-size-lg, $font-weight-normal, $color-gray-dark);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// btn Button
+.btn-button {
+  @include button-primary;
+  @include flex-center;
+  gap: $spacing-3;
+  padding: $spacing-4 $spacing-8;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+    text-decoration: none;
+  }
+  
+  &__icon {
+    @include icon-size(20px);
+    transition: transform $transition-normal;
+  }
+  
+  &:hover &__icon {
+    transform: translateX(4px);
+  }
+}
+
+// Footer pc,sp/on_off
+.pc {
+  display: block;
+  @include respond-below(md) {
+    .pc {
+      display: none;
+    }
+  }
+}
+.sp {
+  display: none;
+  @include respond-below(md) {
+    .sp {
+      display: block;
+    }
+  }
+}

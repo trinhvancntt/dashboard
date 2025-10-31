@@ -1,0 +1,216 @@
+// ========================================
+// BASE STYLES
+// ========================================
+
+// Reset and normalize
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+  color: $color-black;
+  background-color: $color-white;
+  overflow-x: hidden;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  margin: 0 0 $spacing-4 0;
+  color: $color-black;
+}
+
+h1 {
+  font-size: $font-size-5xl;
+  
+  @include respond-to(md) {
+    font-size: $font-size-6xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+  
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-2xl;
+  
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-xl;
+  
+  @include respond-to(md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h5 {
+  font-size: $font-size-lg;
+  
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+h6 {
+  font-size: $font-size-base;
+  
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+p {
+  margin: 0 0 $spacing-4 0;
+  line-height: $line-height-relaxed;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $color-primary-light;
+    text-decoration: underline;
+  }
+  
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+// Lists
+ul, ol {
+  margin: 0 0 $spacing-4 0;
+  padding-left: $spacing-6;
+}
+
+li {
+  margin-bottom: $spacing-2;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+picture {
+  display: block;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $spacing-4;
+}
+
+th, td {
+  padding: $spacing-3;
+  text-align: left;
+  border-bottom: 1px solid $color-gray-light;
+}
+
+th {
+  font-weight: $font-weight-semibold;
+  background-color: $color-gray-light;
+}
+
+// Forms
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+// Accessibility
+.skip-link {
+  @include sr-only;
+  
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: $spacing-2 $spacing-4;
+    margin: $spacing-2;
+    background-color: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    border-radius: $border-radius;
+    z-index: $z-tooltip;
+  }
+}
+
+// Focus management
+*:focus {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// Selection
+::selection {
+  background-color: $color-primary-lighter;
+  color: $color-primary;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-gray-light;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+  border-radius: $border-radius-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $color-primary-light;
+}

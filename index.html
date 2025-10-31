@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Base HTML-SCSS Components Dashboard">
+    <meta name="keywords" content="components, widgets, showcase">
+    <title>Base Components Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&family=Zen+Old+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dashboard-body">
+    <!-- Dashboard Container -->
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">Base Components</h1>
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <!-- Header Section -->
+                <div class="nav-section">
+                    <div class="nav-section-header" data-section="header">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Header</span>
+                        <span class="nav-arrow">▼</span>
+                    </div>
+                    <ul class="nav-section-items" id="nav-header">
+                        <li><a href="#header-1" data-target="header-1">Header 1</a></li>
+                        <li><a href="#header-2" data-target="header-2">Header 2</a></li>
+                        <li><a href="#header-3" data-target="header-3">Header 3</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Section -->
+                <div class="nav-section">
+                    <div class="nav-section-header" data-section="footer">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Footer</span>
+                        <span class="nav-arrow">▼</span>
+                    </div>
+                    <ul class="nav-section-items" id="nav-footer">
+                        <li><a href="#footer-1" data-target="footer-1">Footer 1</a></li>
+                        <li><a href="#footer-2" data-target="footer-2">Footer 2</a></li>
+                        <li><a href="#footer-3" data-target="footer-3">Footer 3</a></li>
+                    </ul>
+                </div>
+
+                <!-- Table Section -->
+                <div class="nav-section">
+                    <div class="nav-section-header" data-section="table">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Table</span>
+                        <span class="nav-arrow">▼</span>
+                    </div>
+                    <ul class="nav-section-items" id="nav-table">
+                        <li><a href="#table-simple" data-target="table-simple">Simple Table</a></li>
+                    </ul>
+                </div>
+
+                <!-- UI Elements Section -->
+                <div class="nav-section">
+                    <div class="nav-section-header" data-section="ui">
+                        <span class="nav-icon">🎨</span>
+                        <span class="nav-text">UI Elements</span>
+                        <span class="nav-arrow">▼</span>
+                    </div>
+                    <ul class="nav-section-items" id="nav-ui">
+                        <li class="nav-subsection">
+                            <span class="nav-subheader">General</span>
+                            <ul>
+                                <li><a href="#ui-typography" data-target="ui-typography">Typography</a></li>
+                                <li><a href="#ui-text-color" data-target="ui-text-color">Text Color</a></li>
+                                <li><a href="#ui-description-vertical" data-target="ui-description-vertical">Description Vertical</a></li>
+                                <li><a href="#ui-description-horizontal" data-target="ui-description-horizontal">Description Horizontal</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-subsection">
+                            <span class="nav-subheader">Button</span>
+                            <ul>
+                                <li><a href="#ui-button-normal" data-target="ui-button-normal">Normal</a></li>
+                                <li><a href="#ui-button-lg" data-target="ui-button-lg">Button Large</a></li>
+                                <li><a href="#ui-button-sm" data-target="ui-button-sm">Button Small</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-subsection">
+                            <span class="nav-subheader">Label Badge</span>
+                            <ul>
+                                <li><a href="#ui-badge-primary" data-target="ui-badge-primary">Primary</a></li>
+                                <li><a href="#ui-badge-secondary" data-target="ui-badge-secondary">Secondary</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-subsection">
+                            <span class="nav-subheader">Slide</span>
+                            <ul>
+                                <li><a href="#ui-carousel" data-target="ui-carousel">Slide Carousel</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-subsection">
+                            <span class="nav-subheader">Modal Popup</span>
+                            <ul>
+                                <li><a href="#ui-modal-gallery" data-target="ui-modal-gallery">Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-subsection">
+                            <span class="nav-subheader">Navbar & Tab</span>
+                            <ul>
+                                <li><a href="#ui-navbar" data-target="ui-navbar">Navbar</a></li>
+                                <li><a href="#ui-tab" data-target="ui-tab">Tab</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#ui-backtop" data-target="ui-backtop">Backtop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Theme Example Section -->
+                <div class="nav-section">
+                    <div class="nav-section-header" data-section="theme">
+                        <span class="nav-icon">🎭</span>
+                        <span class="nav-text">Theme Example</span>
+                        <span class="nav-arrow">▼</span>
+                    </div>
+                    <ul class="nav-section-items" id="nav-theme">
+                        <li><a href="#theme-example" data-target="theme-example">View Theme</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Content Wrapper -->
+        <main class="dashboard-content" id="dashboardContent">
+            <div class="content-header">
+                <h2 class="content-title" id="contentTitle">Base Components Dashboard</h2>
+                <button class="btn-code-toggle" id="codeToggle">
+                    <span>Show Code</span>
+                </button>
+            </div>
+
+            <div class="content-body" id="contentBody">
+                <!-- Default Welcome Message -->
+                <div class="widget-preview" id="default-content">
+                    <div class="welcome-message">
+                        <h3>Welcome to Base Components Dashboard</h3>
+                        <p>Select a component from the sidebar to view its preview and code.</p>
+                    </div>
+                </div>
+
+                <!-- Component Content will be injected here by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/carousel.js"></script>
+</body>
+</html>
+

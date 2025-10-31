@@ -1,0 +1,12 @@
+{
+  "name": "seiryu-kiyomizu-sustainability",
+  "version": "1.0.0",
+  "description": "Sustainability landing page for Seiryu Kiyomizu",
+  "scripts": {
+    "sass": "sass assets/scss/main.scss assets/css/main.css --watch",
+    "sass-build": "sass assets/scss/main.scss assets/css/main.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

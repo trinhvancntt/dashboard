@@ -1,0 +1,62 @@
+// ========================================
+// HEADER STYLES
+// ========================================
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-fixed;
+  background-color: rgba($color-white, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba($color-primary, 0.1);
+  transition: all $transition-normal;
+  
+  &__logo {
+    @include flex-center;
+  }
+  
+  &__logo-img {
+    height: 40px;
+    width: auto;
+  }
+  
+  &__nav {
+    @include respond-below(md) {
+      display: none;
+    }
+  }
+  
+  &__nav-list {
+    @include flex-center;
+    gap: $spacing-8;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  &__nav-item {
+    margin: 0;
+  }
+  
+  &__nav-link {
+    @include text-style($font-size-base, $font-weight-medium, $color-black);
+    padding: $spacing-2 $spacing-4;
+    border-radius: $border-radius;
+    transition: all $transition-fast;
+    text-decoration: none;
+    
+    &:hover {
+      background-color: $color-primary-lighter;
+      color: $color-primary;
+      text-decoration: none;
+    }
+    
+    &:focus {
+      background-color: $color-primary-lighter;
+      color: $color-primary;
+    }
+  }
+}
+
