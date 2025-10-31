@@ -1,29 +1,59 @@
-# Base HTML-SCSS Template
+# Base HTML-SCSS Dashboard
 
-Template chuẩn cho các dự án HTML/SCSS, với cấu trúc modular và responsive design.
+Dashboard hiển thị các components HTML/SCSS, với cấu trúc modular và responsive design.
 
 ## 📁 Cấu trúc thư mục
 
 ```
-base-html-scss/
-├── index.html              # Landing page
+dashboard/
+├── index.html              # Dashboard page (trang chính)
 ├── package.json            # Dependencies
+├── package-lock.json        # Dependencies lock file
+├── settings.json           # VS Code Live Sass Compiler settings
 ├── README.md               # File này
-├── COMPONENT_NAMING_GUIDE.md  # Hướng dẫn đặt tên components
-└── common/
-    ├── css/               # CSS compiled từ SCSS
-    ├── img/               # Images, icons, SVGs
-    ├── js/                # JavaScript files
-    └── scss/              # SCSS source files
-        ├── main.scss         # Import tất cả
-        ├── _variables.scss   # Biến (colors, fonts...)
-        ├── _mixins.scss      # Mixins & functions
-        ├── _base.scss        # CSS reset & base
-        ├── _components.scss  # UI components
-        ├── _layout.scss      # Layout styles
-        ├── _utilities.scss   # Utility classes
-        ├── custom.scss       # Custom styles
-        └── _components-example.scss  # Ví dụ về BEM
+│
+├── assets/                 # Assets chính cho dashboard
+│   ├── css/                # CSS compiled từ SCSS
+│   │   ├── main.css
+│   │   └── main.css.map
+│   ├── img/                # Images, icons, SVGs
+│   ├── js/                 # JavaScript files
+│   │   ├── dashboard.js    # Dashboard functionality
+│   │   ├── carousel.js     # Carousel component
+│   │   └── modal.js        # Modal component
+│   └── scss/               # SCSS source files
+│       ├── dashboard.scss      # Main dashboard styles (import tất cả)
+│       ├── _variables.scss     # Biến (colors, fonts...)
+│       ├── _mixins.scss        # Mixins & functions
+│       ├── _base.scss          # CSS reset & base styles
+│       ├── _components.scss    # UI components
+│       ├── _header.scss        # Header styles
+│       ├── _sidebar.scss       # Sidebar styles
+│       ├── _layout.scss        # Layout styles
+│       ├── _footer.scss        # Footer styles
+│       ├── _utilities.scss     # Utility classes
+│       ├── _modal.scss         # Modal styles
+│       └── _carousel.scss      # Carousel styles
+│
+└── theme/                   # Theme example
+    └── base-html/          # Base HTML theme example
+        ├── index.html      # Theme landing page
+        └── assets/         # Theme assets
+            ├── css/        # Compiled CSS
+            ├── img/        # Theme images
+            ├── js/         # Theme JavaScript
+            └── scss/       # Theme SCSS source files
+                ├── main.scss       # Theme main styles
+                ├── _variables.scss
+                ├── _mixins.scss
+                ├── _base.scss
+                ├── _components.scss
+                ├── _header.scss
+                ├── _layout.scss
+                ├── _footer.scss
+                ├── _utilities.scss
+                ├── _modal.scss
+                └── _carousel.scss
 ```
 
 ## 🚀 Quick Start
@@ -46,9 +76,12 @@ npm run sass
 npm run sass-build
 ```
 
+Lệnh này sẽ compile `assets/scss/dashboard.scss` → `assets/css/dashboard.css`
+
 ### 3. Mở file HTML
 
-Mở `index.html` trong browser để xem kết quả.
+Mở `index.html` trong browser để xem Dashboard Components.
+Mở `theme/base-html/index.html` để xem Theme Example.
 
 ## 📱 Breakpoints
 
@@ -181,7 +214,7 @@ Xem chi tiết trong: **[COMPONENT_NAMING_GUIDE.md](./COMPONENT_NAMING_GUIDE.md)
 
 ### 1. Change Colors
 
-Edit `_variables.scss`:
+Edit `assets/scss/_variables.scss`:
 
 ```scss
 $color-primary: #38923D;        // Your primary color
@@ -190,7 +223,7 @@ $color-secondary: #C5982A;     // Your secondary color
 
 ### 2. Change Fonts
 
-Edit `_variables.scss`:
+Edit `assets/scss/_variables.scss`:
 
 ```scss
 $font-family-primary: 'Your Font', sans-serif;
@@ -199,7 +232,7 @@ $font-family-heading: 'Your Heading Font', serif;
 
 ### 3. Add Custom Components
 
-Create in `custom.scss`:
+Thêm vào `assets/scss/_components.scss` hoặc tạo file mới và import vào `dashboard.scss`:
 
 ```scss
 .my-custom-component {
@@ -212,7 +245,7 @@ Create in `custom.scss`:
 
 ### 4. Override Existing Components
 
-Edit `custom.scss`:
+Edit trong file SCSS tương ứng hoặc thêm vào `dashboard.scss` sau các import:
 
 ```scss
 .hero {
@@ -238,23 +271,20 @@ Edit `custom.scss`:
 ## 📝 NPM Scripts
 
 ```bash
-# Watch SCSS changes
+# Watch SCSS changes (compile assets/scss/dashboard.scss)
 npm run sass
 
 # Build for production (minified)
 npm run sass-build
-
-# Custom SCSS (if needed)
-npm run sass-custom
-npm run sass-build-custom
 ```
 
 ## 📖 Documentation
 
-- **Component Naming Guide**: [COMPONENT_NAMING_GUIDE.md](./COMPONENT_NAMING_GUIDE.md)
-- **Example Components**: [common/scss/_components-example.scss](./common/scss/_components-example.scss)
-- **SCSS Variables**: [common/scss/_variables.scss](./common/scss/_variables.scss)
-- **Mixins**: [common/scss/_mixins.scss](./common/scss/_mixins.scss)
+- **SCSS Variables**: [assets/scss/_variables.scss](./assets/scss/_variables.scss)
+- **Mixins**: [assets/scss/_mixins.scss](./assets/scss/_mixins.scss)
+- **Dashboard Styles**: [assets/scss/dashboard.scss](./assets/scss/dashboard.scss)
+- **Components**: [assets/scss/_components.scss](./assets/scss/_components.scss)
+- **Theme Example**: [theme/base-html/index.html](./theme/base-html/index.html)
 
 ## 💡 Best Practices
 
@@ -301,12 +331,20 @@ npm run sass-build-custom
 </div>
 ```
 
+## 🎯 Dashboard Features
+
+- **Component Showcase**: Hiển thị các components HTML/SCSS
+- **Sidebar Navigation**: Điều hướng dễ dàng giữa các components
+- **Code Toggle**: Xem/hide code source của từng component
+- **Responsive Design**: Tối ưu cho mobile, tablet và desktop
+- **Theme Example**: Xem ví dụ theme hoàn chỉnh trong `theme/base-html/`
+
 ## 📞 Support
 
 Nếu có câu hỏi hoặc cần hỗ trợ, vui lòng xem:
 - README này
-- COMPONENT_NAMING_GUIDE.md
 - Code comments trong các file SCSS
+- Examples trong `theme/base-html/`
 
 ## 📄 License
 
