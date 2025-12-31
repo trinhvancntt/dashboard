@@ -3,34 +3,34 @@
 // ========================================
 
 // Import variables first
-@import 'variables';
+@use 'variables';
 
 // Import mixins
-@import 'mixins';
+@use 'mixins';
 
 // Import base styles
-@import '_base';
+@use 'base';
 
 // Import components
-@import 'components';
+@use 'components';
 
 // Import header
-@import 'header';
+@use 'header';
 
 // Import layout (sections only)
-@import 'layout';
+@use 'layout';
 
 // Import footer
-@import 'footer';
+@use 'footer';
 
 // Import utilities last (for specificity)
-@import 'utilities';
+@use 'utilities';
 
 // Import modal styles
-@import 'modal';
+@use 'modal';
 
 // Import carousel styles
-@import 'carousel';
+@use 'carousel';
 
 // ========================================
 // ANIMATIONS
